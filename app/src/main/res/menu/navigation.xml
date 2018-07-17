@@ -27,7 +27,7 @@
     <item
         android:id="@+id/navigation_favourite"
         android:icon="@drawable/ic_favorite_black_24dp"
-        android:title="Favourite"
+        android:title="Favourites"
         android:enabled="true"
         app:showAsAction="always"/>
 

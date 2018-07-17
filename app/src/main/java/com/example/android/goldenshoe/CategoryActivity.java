@@ -1,10 +1,14 @@
 package com.example.android.goldenshoe;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.internal.BottomNavigationMenuView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class CategoryActivity extends AppCompatActivity {
@@ -30,15 +35,13 @@ public class CategoryActivity extends AppCompatActivity {
 
         ArrayList<Shoes> shoez = new ArrayList<>();
         shoez.add(new Shoes("Aztec Sandals", 22.99, R.drawable.aztec));
-        shoez.add(new Shoes("Lace Sandals", 21.99, R.drawable.aztec));
-        shoez.add(new Shoes("Blue Tiger", 24.99, R.drawable.aztec));
-        shoez.add(new Shoes("Aztec Flip", 17.99, R.drawable.aztec));
-        shoez.add(new Shoes("Be Active", 19.99, R.drawable.aztec));
-        shoez.add(new Shoes("Comfy Sandals", 34.99, R.drawable.aztec));
-        shoez.add(new Shoes("Diamonte Sandals", 29.99, R.drawable.aztec));
-        shoez.add(new Shoes("Jewelled Sandals", 26.99, R.drawable.aztec));
-        shoez.add(new Shoes("Toe Post Sandals", 25.99, R.drawable.aztec));
-        shoez.add(new Shoes("Glitter Sliders", 20.99, R.drawable.aztec));
+        shoez.add(new Shoes("Studded Straps", 21.99, R.drawable.sandal1));
+        shoez.add(new Shoes("Merciful Tiger", 24.99, R.drawable.sandal5));
+        shoez.add(new Shoes("Aztec Flip", 17.99, R.drawable.sandal3));
+        shoez.add(new Shoes("Gladiator Win", 19.99, R.drawable.sandal4));
+        shoez.add(new Shoes("Comfy Toe Post", 34.99, R.drawable.sandal2));
+        shoez.add(new Shoes("Diamonte Sandals", 29.99, R.drawable.aztec_sandals));
+
 
         ShoesAdapter adapter = new ShoesAdapter(this, shoez);
 
@@ -60,6 +63,8 @@ public class CategoryActivity extends AppCompatActivity {
 
 
         BottomNavigationView navigationSearch = (BottomNavigationView) findViewById(R.id.navigation_search);
+        disableShiftMode(navigationSearch);
+
         navigationSearch.setOnNavigationItemSelectedListener(
                 new BottomNavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -89,6 +94,28 @@ public class CategoryActivity extends AppCompatActivity {
                         return false;
                     }
                 });
+    }
+    @SuppressLint("RestrictedApi")
+    public static void disableShiftMode(BottomNavigationView nw) {
+        BottomNavigationMenuView menuView = (BottomNavigationMenuView) nw.getChildAt(0);
+        try {
+            Field shiftingMode = menuView.getClass().getDeclaredField("mShiftingMode");
+            shiftingMode.setAccessible(true);
+            shiftingMode.setBoolean(menuView, false);
+            shiftingMode.setAccessible(false);
+            for (int i = 0; i < menuView.getChildCount(); i++) {
+                BottomNavigationItemView item = (BottomNavigationItemView) menuView.getChildAt(i);
+                //noinspection RestrictedApi
+                item.setShiftingMode(false);
+                // set once again checked value, so view will be updated
+                //noinspection RestrictedApi
+                item.setChecked(item.getItemData().isChecked());
+            }
+        } catch (NoSuchFieldException e) {
+            Log.e("BNVHelper", "Unable to get shift mode field", e);
+        } catch (IllegalAccessException e) {
+            Log.e("BNVHelper", "Unable to change value of shift mode", e);
+        }
     }
 
 }

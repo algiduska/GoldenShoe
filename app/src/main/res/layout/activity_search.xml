@@ -15,6 +15,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
 
         <LinearLayout
@@ -54,15 +57,31 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-
-                <EditText
-                    android:id="@+id/search_for"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:focusable="false"
-                    android:hint="What are you looking for?" />
+                    android:layout_height="wrap_content">
+
+
+                    <EditText
+                        android:id="@+id/search_for"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:focusable="false"
+                        android:hint="What are you looking for?" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="24dp"
+                        android:src="@drawable/ic_camera_alt_black_24dp" />
+
+                </RelativeLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -81,7 +100,7 @@
                         <RelativeLayout
                             android:id="@+id/sandals"
                             style="@style/categories"
-                            android:background="@color/colorPrimary">
+                            android:background="@drawable/sandals_cat">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -89,6 +108,7 @@
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="16dp"
                                 android:text="SANDALS"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 
@@ -96,7 +116,7 @@
 
                         <RelativeLayout
                             style="@style/categories"
-                            android:background="@color/colorPrimary">
+                            android:background="@drawable/balerinas_cat">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -104,6 +124,7 @@
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="16dp"
                                 android:text="BALLERINAS"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 
@@ -111,7 +132,7 @@
 
                         <RelativeLayout
                             style="@style/categories"
-                            android:background="@color/colorPrimary">
+                            android:background="@drawable/wedges_cat">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -119,6 +140,7 @@
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="16dp"
                                 android:text="WEDGES"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 
@@ -126,7 +148,7 @@
 
                         <RelativeLayout
                             style="@style/categories"
-                            android:background="@color/colorPrimary">
+                            android:background="@drawable/comfy_cat">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -134,6 +156,7 @@
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="16dp"
                                 android:text="COMFORT"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 
@@ -160,7 +183,7 @@
                         <RelativeLayout
                             android:id="@+id/espadrilles"
                             style="@style/categories"
-                            android:background="@color/colorPrimary">
+                            android:background="@drawable/espadrilles_cat">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -168,6 +191,7 @@
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="16dp"
                                 android:text="ESPADRILLES"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 
@@ -175,14 +199,15 @@
 
                         <RelativeLayout
                             style="@style/categories"
-                            android:background="@color/colorPrimary">
+                            android:background="@drawable/flats_cat">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="16dp"
-                                android:text="BEACH"
+                                android:text="SLIDERS"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 
@@ -190,7 +215,7 @@
 
                         <RelativeLayout
                             style="@style/categories"
-                            android:background="@color/colorPrimary">
+                            android:background="@drawable/sport_cat">
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -198,6 +223,7 @@
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="16dp"
                                 android:text="TRAINERS"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 
@@ -205,14 +231,15 @@
 
                         <RelativeLayout
                             style="@style/categories"
-                            android:background="@color/colorPrimary">
+                            android:background="@drawable/something_cat">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="16dp"
-                                android:text="SLIPPERS"
+                                android:text="SUMMER"
+                                android:textStyle="bold"
                                 android:textColor="@android:color/white"
                                 android:textSize="20sp" />
 

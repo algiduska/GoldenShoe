@@ -8,6 +8,7 @@
     android:layout_alignParentStart="true"
     android:layout_alignParentLeft="true"
     android:layout_alignParentTop="true"
+    android:background="@android:color/white"
     tools:context=".BasketActivity">
 
     <ScrollView
@@ -42,24 +43,24 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginLeft="16dp"
                     android:background="@drawable/aztec">
 
                     <ImageView
+                        android:id="@+id/heart_basket"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
-                        android:layout_marginRight="16dp"
                         android:layout_marginTop="16dp"
                         android:src="@drawable/ic_favorite_border_black_24dp" />
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginBottom="16dp"
-                        android:layout_marginRight="16dp"
+                        android:layout_alignTop="@+id/heart_basket"
+                        android:layout_toStartOf="@+id/heart_basket"
+                        android:layout_toLeftOf="@id/heart_basket"
                         android:src="@drawable/ic_clear_black_24dp" />
 
 
