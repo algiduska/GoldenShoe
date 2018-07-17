@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentTop="true"
+    tools:context=".AccountActivity">
+    
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center_vertical"
+            android:text="Emily"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/points"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <!-- Icon made by Vectors Market from www.flaticon.com -->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/medal" />
+
+            <LinearLayout
+                android:layout_width="220dp"
+                android:layout_height="70dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="8dp"
+                    android:text="2299 points"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="£2.29"
+                    android:textColor="@color/darkGrey"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/accountList"
+            android:text="My ID" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="My feet scan" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="About me" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="My delivery preferences" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="Marketing preferences" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="Notifications" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="Track my order" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="Order history" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="Returns and Refunds" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="Contact us" />
+
+        <TextView
+            style="@style/accountList"
+            android:text="Terms and conditions" />
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
+        
+        
+
+    </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_above="@+id/button"
+        android:background="@color/colorPrimary">
+
+    </LinearLayout>
+    
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigation_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
+        app:menu="@menu/navigation" />
+
+</RelativeLayout>
